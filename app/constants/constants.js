@@ -1,0 +1,1 @@
+export const DICOM_EXTENSION = "dcm"

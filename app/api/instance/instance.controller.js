@@ -1,15 +1,29 @@
 import DataService from "../../service/DataService";
-import fs from "fs";
+import { DICOM_EXTENSION } from "../../constants/constants";
 
 export async function filePost(req, res) {
-    try {   
-      let response = await DataService.post("instances", req?.files["dicom"].data);
-      console.log(JSON.stringify(response.data));
-      res.json(response.data);
+  let combinedResponse = [];
+
+  if (req?.files === undefined || Object.keys(req.files).length === 0) {
+    res.json("please attach the files to upload");
+  }
+
+  await Promise.all(
+    Object.keys(req.files).map(async (name) => {
+      try {
+        let response = await DataService.post(
+          "instances",
+          req?.files[name].data
+        );
+        console.log(JSON.stringify(response.data));
+        combinedResponse.push(response.data);
+      } catch (error) {
+        res.json({ response: combinedResponse });
+        console.log("error", error);
       }
-      catch(error){
-          console.log("error", error);
-      }
+    })
+  );
+  res.json({ response: combinedResponse });
 }
 
 export async function fileDownload(req, res) {
@@ -28,9 +42,8 @@ export async function fileDownload(req, res) {
     res.writeHeader(200, {
       "Content-Type": "application/dicom",
       "Content-Encoding": "application/gzip",
-      "Content-Disposition": `filename="${instanceId}.dcm"`,
+      "Content-Disposition": `filename="${instanceId}.${DICOM_EXTENSION}"`,
     });
-
     res.write(response.data);
     res.end();
   } catch (error) {

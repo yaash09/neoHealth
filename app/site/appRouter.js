@@ -24,6 +24,16 @@ let _appRouter = () => {
             }
             app.use(prefixPath, router)
         },
+        addDeleteController: (path,verfiyFn, fn = null, prefixPath = '/api') => {
+            var router = new express.Router()
+            if (fn ===null) {
+                router.delete(path, verfiyFn);
+            }
+            else{
+                router.delete(path, verfiyFn, fn);
+            }
+            app.use(prefixPath, router)
+        },
     };
 
 
