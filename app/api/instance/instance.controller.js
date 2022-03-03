@@ -15,7 +15,7 @@ export async function filePost(req, res) {
           "instances",
           req?.files[name].data
         );
-        console.log(JSON.stringify(response.data));
+
         combinedResponse.push(response.data);
       } catch (error) {
         res.json({ response: combinedResponse });
@@ -27,8 +27,6 @@ export async function filePost(req, res) {
 }
 
 export async function fileDownload(req, res) {
-  console.log(req);
-
   let instanceId = req.params["instanceid"];
   var config = {
     responseType: "arraybuffer",
@@ -52,5 +50,3 @@ export async function fileDownload(req, res) {
   }
 }
 
-// dicom extension
-// export const DICOM_EXTENSION = ".dcm"

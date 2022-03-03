@@ -25,6 +25,10 @@ glob("./api/**/*.routes.js", {}, function (er, files) {
     }
   })
 
-app.use(express.static('dist'));
+
+// app.get('*', function(req, res){
+//   console.log('404ing');
+//   res.json({message:'No such route'});
+// });
 
 export default app;
