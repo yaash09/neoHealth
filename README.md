@@ -6,10 +6,12 @@ The project contains easy to use wrapper on existing orthan Rest API.
 You need a orthan server to communicate. if you don't have one, you can setup a local server by downloading orthan setup from [here](https://www.orthanc-server.com/download.php).
 after installation you can check if the orthan server is running or not by going in to services in window, there you should find a running orthac service.
 
-Before running the project make sure you have a .env file as per sample attached containing the orthanc server base url.
+Before running the project make sure you have a .env file as per sample .env-sample file attached containing the orthanc server base url.
 you can run the project with npm start in root folder.
 
 >> npm start
+
+I used postman to demostrate API call.
 
 ### Using the API
 
