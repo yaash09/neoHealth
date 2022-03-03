@@ -26,24 +26,24 @@ The file are attached in formdata. one can attach multiple files in single call 
 #### Listing patients
 
 Once we upload a file it creates a patient , study and series for that instance(file upload).
-we can list the list all the patients, series, instances and studies orthan server have, by using below get routes.
+we can list all the patients, series, instances and studies that are present in our orthan server, by using below get routes.
 
->> (Get request)  http://0.0.0.0:3001/api/list/instances/  
->> (Get request)  http://0.0.0.0:3001/api/list/patients/  
->> (Get request)  http://0.0.0.0:3001/api/list/series/  
->> (Get request)  http://0.0.0.0:3001/api/list/studies/  
+>> (Get request)  http://localhost:3001/api/list/instances/  
+>> (Get request)  http://localhost:3001/api/list/patients/  
+>> (Get request)  http://localhost:3001/api/list/series/  
+>> (Get request)  http://localhost:3001/api/list/studies/  
 
 ![image](https://user-images.githubusercontent.com/85926236/156497698-436b575d-bd82-4d2e-a294-48c76205b48b.png)
 
 This will give you the ids of all the patients present.
 
-you can get detail of any patient by taking patientId anf following below route
+you can get detail of any patient by taking respective patientId and using it in the route as shown below.
 
 >> http://localhost:3001/api/patients/< patiendId >
 
 ![image](https://user-images.githubusercontent.com/85926236/156497865-e15bef99-94db-4d20-8409-6de9747b906c.png)
 
-we can get details of other entities as well  in same way
+We can get details of other entities as well, in the same way
 >> http://localhost:3001/api/series/< seriesId >
 
 >> http://localhost:3001/api/studies/< studiesId >
@@ -51,8 +51,14 @@ we can get details of other entities as well  in same way
  
 ### Downloading instance/file
   
-  To download a file you need it's instanceId 
+  To download a file you need it's instanceId.
+  
+  You can get instance Id with below route:
+  
+  >> (Get request)  http://localhost:3001/api/list/instances/  
 
+  You can use instance ID from above response and use it in below route to download:
+  
   >> http://localhost:3001/api/instance/< instance-id >
 
 
