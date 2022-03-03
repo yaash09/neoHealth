@@ -25,8 +25,8 @@ The file are attached in formdata. one can attach multiple files in single call 
 
 #### Listing patients
 
-one we upload a file it creates a patient , study and series for that instance(file upload).
-we can list all the list all the patients, series, instances and studies orthan server have, by usin below get routes.
+Once we upload a file it creates a patient , study and series for that instance(file upload).
+we can list the list all the patients, series, instances and studies orthan server have, by using below get routes.
 
 >> (Get request)  http://0.0.0.0:3001/api/list/instances/  
 >> (Get request)  http://0.0.0.0:3001/api/list/patients/  
@@ -37,18 +37,22 @@ we can list all the list all the patients, series, instances and studies orthan 
 
 This will give you the ids of all the patients present.
 
-you can get get detail of any patient by taking patientId anf following below route
+you can get detail of any patient by taking patientId anf following below route
 
->> http://localhost:3001/api/patients/<patiendId>
+>> http://localhost:3001/api/patients/< patiendId >
 
 ![image](https://user-images.githubusercontent.com/85926236/156497865-e15bef99-94db-4d20-8409-6de9747b906c.png)
+
+we can get details of other entities as well  in same way
+>> http://localhost:3001/api/series/< seriesId >
+>> http://localhost:3001/api/studies/< studiesId >
   
  
 ### Downloading instance/file
   
   To download a file you need it's instanceId 
 
-  >> http://localhost:3001/api/instance/<instance-id>
+  >> http://localhost:3001/api/instance/< instance-id >
 
 
 
