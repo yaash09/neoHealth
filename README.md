@@ -6,10 +6,12 @@ The project contains easy to use wrapper on existing orthan Rest API.
 You need a orthan server to communicate. if you don't have one, you can setup a local server by downloading orthan setup from [here](https://www.orthanc-server.com/download.php).
 after installation you can check if the orthan server is running or not by going in to services in window, there you should find a running orthac service.
 
-Before running the project make sure you have a .env file as per sample attached containing the orthanc server base url.
+Before running the project make sure you have a .env file as per sample .env-sample file attached containing the orthanc server base url.
 you can run the project with npm start in root folder.
 
 >> npm start
+
+I used postman to demostrate API call.
 
 ### Using the API
 
@@ -23,7 +25,7 @@ The file are attached in formdata. one can attach multiple files in single call 
 
 ![image](https://user-images.githubusercontent.com/85926236/156495638-6bd25c40-06eb-4ca4-8b1e-8d1e4644c4a7.png)
 
-#### Listing patients
+#### Listing 
 
 Once we upload a file it creates a patient , study and series for that instance(file upload).
 we can list all the patients, series, instances and studies that are present in our orthan server, by using below get routes.
@@ -48,6 +50,15 @@ We can get details of other entities as well, in the same way
 
 >> http://localhost:3001/api/studies/< studiesId >
   
+### Deletion 
+
+To delete any of instance/studies/series/patient, you need it's id and you can you can use below route as required.
+
+>> (Delete request)  http://localhost:3001/api/list/instances/ < id >  
+>> (Delete request)  http://localhost:3001/api/list/patients/< id >  
+>> (Delete request)  http://localhost:3001/api/list/series/ < id >  
+>> (Delete request)  http://localhost:3001/api/list/studies/< id >  
+
  
 ### Downloading instance/file
   
