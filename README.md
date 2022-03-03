@@ -1,5 +1,5 @@
 # neoHealth
-the project contains easy to use wrapper on existing orthan Rest API.
+The project contains easy to use wrapper on existing orthan Rest API.
 
 ### Running the project
 
@@ -45,6 +45,7 @@ you can get detail of any patient by taking patientId anf following below route
 
 we can get details of other entities as well  in same way
 >> http://localhost:3001/api/series/< seriesId >
+
 >> http://localhost:3001/api/studies/< studiesId >
   
  
