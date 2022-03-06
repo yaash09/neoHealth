@@ -25,4 +25,5 @@ glob("./api/**/*.routes.js", {}, function (er, files) {
     }
   })
 
+setTimeout( () => {import('./api/error.js')} , 2500)
 export default app;
